@@ -38,3 +38,6 @@ print("\nppl1", *cur.execute("select * from ppl1").fetchall(), sep="\n")
 print("\nДобавляем в ppl1 все записи с именами Ruth, Leonard или Cassi, которые есть в ppl2")
 cur.execute("insert into ppl1 (first, last) select first, last from ppl2 where first in ('Ruth', 'Leonard', 'Cassi')")
 print("\nppl1", *cur.execute("select * from ppl1").fetchall(), sep="\n")
+
+conn.commit()
+conn.close()
